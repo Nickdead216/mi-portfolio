@@ -7,8 +7,8 @@ type Proyecto = {
 }
 
 async function getProyectos(): Promise<Proyecto[]> {
-  const res = await fetch('http://127.0.0.1:8000/api/proyectos/', {
-    cache: 'no-store'
+  const res = await fetch('https://mi-backend-dj0e.onrender.com/api/proyectos/', {
+  cache: 'no-store'
   })
   return res.json()
 }
