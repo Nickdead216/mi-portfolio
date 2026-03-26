@@ -15,22 +15,39 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <nav className="flex gap-6 p-6 border-b border-gray-200">
-          <Link href="/" className="font-bold text-gray-900 hover:text-blue-600">
-            Nicolás Vicentelo
-          </Link>
-          <div className="flex gap-4 ml-auto">
-            <Link href="/proyectos" className="text-gray-600 hover:text-blue-600">
-              Proyectos
-            </Link>
-            <Link href="/contacto" className="text-gray-600 hover:text-blue-600">
-              Contacto
-            </Link>
-          </div>
-        </nav>
-        <main>
-          {children}
-        </main>
+        <div className="min-h-screen">
+          <header className="w-full border-b border-white/10 bg-[#0d111a]/80 backdrop-blur">
+            <nav className="flex w-full items-center justify-between px-6 py-4 md:px-10 lg:px-14 xl:px-20">
+              <Link
+                href="/"
+                className="text-xl font-semibold tracking-tight text-white"
+              >
+                NV
+              </Link>
+
+              <div className="flex items-center gap-4 text-sm text-slate-400 sm:gap-6 md:gap-8">
+                <Link href="/proyectos" className="transition hover:text-white">
+                  Proyectos
+                </Link>
+                <Link href="/contacto" className="transition hover:text-white">
+                  Contacto
+                </Link>
+                <a
+                  href="https://github.com/Nickdead216"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-white"
+                >
+                  GitHub
+                </a>
+              </div>
+            </nav>
+          </header>
+
+          <main className="flex min-h-[calc(100vh-69px)] items-center justify-center px-6 py-10">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   )
